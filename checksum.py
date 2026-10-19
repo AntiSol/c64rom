@@ -89,7 +89,7 @@ if __name__ == "__main__":
 		desired_checksum = int(opts.checksum, opts.base)
 		offset = int(opts.offset, opts.base)
 
-		if checksum < desired_checksum:
+		if checksum <= desired_checksum:
 			data[offset] = desired_checksum - checksum
 		else:
 			data[offset] = 0xff - (checksum - desired_checksum)
